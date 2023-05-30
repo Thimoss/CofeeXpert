@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "704df5cc-8c60-4ea3-89d3-0f4e20950946"
+      }
+    },
+    "owner": "thimoss"
   }
 }
