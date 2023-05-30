@@ -54,13 +54,12 @@ const Konsultasi = (props: any) => {
               </View>
               {/* Ciri-Ciri Kerusakan */}
               <View>
-                <Text style={styles.title}>Ciri-Ciri Kerusakan</Text>
+                <Text style={styles.title}>Kerusakan Yang Diperkirakan</Text>
                 <TouchableOpacity style={styles.viewRow}>
                   <Text style={styles.text}>
-                    Terdapat beberapa ciri-ciri kerusakan yang sering terjadi. Klik untuk melihat
-                    selengkapnya.
+                    Berdasarkan kendala yang kamu berikan, bisa kami simpulkan kemungkinkan kendala
+                    yang kamu alami adalah:
                   </Text>
-                  <Icon name="chevron-forward" type="ionicon" color="#374151" size={20} />
                 </TouchableOpacity>
               </View>
             </View>
