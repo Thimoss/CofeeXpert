@@ -5,18 +5,12 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import Layout from '../components/Layout';
 
 const Home = (props: any) => {
+  console.log(props.props.navigation);
   return (
     <Layout titleBar title="Home">
       <View style={styles.contentView}>
         <ScrollView>
-          <View
-            style={{
-              padding: 10,
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'row',
-              flex: 1,
-            }}>
+          <View style={styles.viewText}>
             <Image
               source={require('../../assets/image/Machine.png')}
               style={{ height: 210, width: 200 }}
@@ -24,7 +18,20 @@ const Home = (props: any) => {
           </View>
 
           {/* Tulisan */}
-          <View style={{ gap: 20 }}>
+          <View style={{ gap: 20, flex: 1, paddingBottom: 60 }}>
+            <View>
+              <Text style={styles.title}>CofeeXpert</Text>
+              <Text style={styles.text}>
+                CofeeXPert adalah aplikasi sistem pakar yang menghadirkan solusi cepat dan akurat
+                untuk menganalisis dan memperbaiki kerusakan pada mesin kopi. Dengan basis
+                pengetahuan yang luas dan kecerdasan buatan yang canggih, CofeeXPert memungkinkan
+                pengguna untuk mengidentifikasi masalah pada mesin kopi mereka dan memberikan solusi
+                yang tepat secara mandiri. Dengan panduan perbaikan yang disesuaikan, pengguna dapat
+                menghemat waktu dan biaya yang mungkin dikeluarkan untuk memanggil teknisi atau
+                membawa mesin kopi ke pusat perbaikan, serta menikmati pengalaman menggunakan mesin
+                kopi yang lebih lancar dan terhindar dari kerusakan.
+              </Text>
+            </View>
             <View>
               <Text style={styles.title}>Apa Itu Mesin Kopi?</Text>
               <Text style={styles.text}>
@@ -33,28 +40,6 @@ const Home = (props: any) => {
                 menghasilkan berbagai jenis kopi, seperti espresso, cappuccino, latte, dan banyak
                 lagi. Mesin ini sangat populer di rumah, kafe, restoran, dan tempat kerja.
               </Text>
-            </View>
-
-            {/* Jenis-Jenis Kerusakan */}
-            <View>
-              <Text style={styles.title}>Jenis-Jenis Kerusakan</Text>
-              <TouchableOpacity style={styles.viewRow}>
-                <Text style={styles.text}>
-                  Terdapat beberapa kerusakan yang sering terjadi. Klik untuk melihat selengkapnya.
-                </Text>
-                <Icon name="chevron-forward" type="ionicon" color="#374151" size={20} />
-              </TouchableOpacity>
-            </View>
-            {/* Ciri-Ciri Kerusakan */}
-            <View>
-              <Text style={styles.title}>Ciri-Ciri Kerusakan</Text>
-              <TouchableOpacity style={styles.viewRow}>
-                <Text style={styles.text}>
-                  Terdapat beberapa ciri-ciri kerusakan yang sering terjadi. Klik untuk melihat
-                  selengkapnya.
-                </Text>
-                <Icon name="chevron-forward" type="ionicon" color="#374151" size={20} />
-              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
@@ -66,6 +51,13 @@ const Home = (props: any) => {
 export default Home;
 
 const styles = StyleSheet.create({
+  viewText: {
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    flex: 1,
+  },
   viewRow: {
     flexDirection: 'row',
     alignItems: 'center',
