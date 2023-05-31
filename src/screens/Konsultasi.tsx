@@ -14,6 +14,9 @@ const Konsultasi = (props: any) => {
     setPersentaseKerusakan(persentaseKerusakan);
   };
   console.log('jenisKerusakan', { jenisKerusakan });
+  const isKerusakanBelumDipastikan =
+    jenisKerusakan && jenisKerusakan.length > 0 && jenisKerusakan[0].percentage <= 33;
+
   return (
     <Layout titleBar title="Konsultasi">
       <View style={styles.contentView}>
@@ -64,23 +67,32 @@ const Konsultasi = (props: any) => {
               <View style={styles.text}>
                 <Text style={styles.text}>Jenis Kerusakan:</Text>
                 {jenisKerusakan && jenisKerusakan.length > 0 ? (
-                  jenisKerusakan.map((kerusakan, index) => {
-                    return (
-                      <View key={index}>
-                        <Text style={styles.text}>
-                          {index + 1}. {kerusakan.diagnosis}
-                        </Text>
-                        <Text style={styles.text}>
-                          Persentase Kerusakan: {kerusakan.percentage}%
-                        </Text>
-                        {kerusakan.percentage === 100 && (
-                          <Text style={styles.text}>
-                            Kesimpulan: Mesin kopi rusak karena {kerusakan.diagnosis}
-                          </Text>
-                        )}
+                  <>
+                    {isKerusakanBelumDipastikan ? (
+                      <View>
+                        <Text style={styles.text}>1. Kerusakan belum bisa dipastikan</Text>
+                        <Text style={styles.text}>Persentase Kerusakan: 33%</Text>
                       </View>
-                    );
-                  })
+                    ) : (
+                      jenisKerusakan.map((kerusakan, index) => {
+                        return (
+                          <View key={index}>
+                            <Text style={styles.text}>
+                              {index + 1}. {kerusakan.diagnosis}
+                            </Text>
+                            <Text style={styles.text}>
+                              Persentase Kerusakan: {kerusakan.percentage}%
+                            </Text>
+                            {kerusakan.percentage === 100 && (
+                              <Text style={styles.text}>
+                                Kesimpulan: Mesin kopi rusak karena {kerusakan.diagnosis}
+                              </Text>
+                            )}
+                          </View>
+                        );
+                      })
+                    )}
+                  </>
                 ) : (
                   <View>
                     <Text style={styles.text}>1. Kerusakan belum bisa dipastikan</Text>
