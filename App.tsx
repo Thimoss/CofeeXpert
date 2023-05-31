@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { Text } from 'react-native';
 
 import Home from './src/screens/Home';
+import Kerusakan from './src/screens/Kerusakan';
 import Konsultasi from './src/screens/Konsultasi';
 import TabNavigator from './src/screens/TabNavigator';
 
@@ -53,6 +54,7 @@ export default function App() {
           <Stack.Screen name="TabNavigator" component={TabNavigator} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Konsultasi" component={Konsultasi} />
+          <Stack.Screen name="Kerusakan" component={Kerusakan} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

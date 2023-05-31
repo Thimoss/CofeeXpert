@@ -4,6 +4,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Home from './Home';
+import Kerusakan from './Kerusakan';
 import Konsultasi from './Konsultasi';
 
 const Tab = createBottomTabNavigator();
@@ -44,40 +45,45 @@ const TabNavigator = (props: any) => {
           tabBarIcon: KonsultasiMenu,
         }}
       />
-      {/* <Tab.Screen
-        name="Profile"
-        children={() => <Profile props={props} />}
+      <Tab.Screen
+        name="Kerusakan"
+        children={() => <Kerusakan props={props} />}
         options={{
-          tabBarIcon: ProfileMenu,
+          tabBarIcon: KerusakanMenu,
         }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 };
 
-const HomeMenu = () => {
+const HomeMenu = ({ focused }) => {
   return (
     <View style={styles.viewStyle}>
-      <Icon name="home" type="ionicon" color="#2D5BD1" size={25} />
-      <Text style={styles.textLabel}>HOME</Text>
+      <Icon name="home" type="ionicon" color={focused ? '#2D5BD1' : '#374151'} size={25} />
+      <Text style={focused ? [styles.textLabel] : [styles.textLabel1]}>HOME</Text>
     </View>
   );
 };
 
-const KonsultasiMenu = () => {
+const KonsultasiMenu = ({ focused }) => {
   return (
     <View style={styles.viewStyle}>
-      <Icon name="chatbubbles-sharp" type="ionicon" color="#374151" size={25} />
-      <Text style={styles.textLabel}>KONSULTASI</Text>
+      <Icon
+        name="chatbubbles-sharp"
+        type="ionicon"
+        color={focused ? '#2D5BD1' : '#374151'}
+        size={25}
+      />
+      <Text style={focused ? [styles.textLabel] : [styles.textLabel1]}>KONSULTASI</Text>
     </View>
   );
 };
 
-const ProfileMenu = () => {
+const KerusakanMenu = ({ focused }) => {
   return (
     <View style={styles.viewStyle}>
-      <Icon name="person" type="ionicon" color="#374151" size={25} />
-      <Text style={styles.textLabel}>PROFILE</Text>
+      <Icon name="person" type="ionicon" color={focused ? '#2D5BD1' : '#374151'} size={25} />
+      <Text style={focused ? [styles.textLabel] : [styles.textLabel1]}>KERUSAKAN</Text>
     </View>
   );
 };
@@ -104,20 +110,15 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     borderRadius: 20,
   },
-  textFocus: {
-    paddingTop: 4,
-    fontFamily: 'Poppins_SemiBold',
-    fontSize: 8,
-  },
-  textNoFocus: {
-    paddingTop: 4,
-    fontFamily: 'Poppins_SemiBold',
-    fontSize: 8,
-  },
   textLabel: {
     fontFamily: 'Poppins_SemiBold',
     fontSize: 9,
     color: '#2D5BD1',
+  },
+  textLabel1: {
+    fontFamily: 'Poppins_SemiBold',
+    fontSize: 9,
+    color: '#374151',
   },
 });
 

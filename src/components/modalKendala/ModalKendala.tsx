@@ -35,8 +35,8 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(1) && selectedButtons.includes(7))
       ) {
         kerusakan.push({
-          diagnosis: 'Kerusakan Mungkin terletak pada Tombol On/Off tidak tertekan',
-          percentage: 77,
+          diagnosis: 'Tombol On/Off tidak tertekan',
+          percentage: 67,
         });
       } else if (selectedButtons.length === 1) {
         kerusakan.push({
@@ -59,8 +59,8 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(1) && selectedButtons.includes(11))
       ) {
         kerusakan.push({
-          diagnosis: 'Kerusakan Mungkin terletak Sumber kabel konslet',
-          percentage: 77,
+          diagnosis: 'Sumber Kabel Konslet',
+          percentage: 67,
         });
       } else if (selectedButtons.length === 1) {
         kerusakan.push({
@@ -81,7 +81,7 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(0) && selectedButtons.includes(9)) ||
         (selectedButtons.includes(2) && selectedButtons.includes(9))
       ) {
-        kerusakan.push({ diagnosis: 'Kerusakan Mungkin karena Mesin panas', percentage: 77 });
+        kerusakan.push({ diagnosis: 'Mesin panas', percentage: 67 });
       } else if (selectedButtons.length === 1) {
         kerusakan.push({ diagnosis: 'Kerusakan belum bisa dipastikan', percentage: 33 });
         totalPersentase += 0;
@@ -100,10 +100,10 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(2) && selectedButtons.includes(8))
       ) {
         kerusakan.push({
-          diagnosis: 'Kerusakan Mungkin Karena Biji kopi kepenuhan atau terlalu padat',
-          percentage: 77,
+          diagnosis: 'Biji kopi kepenuhan atau terlalu padat',
+          percentage: 67,
         });
-        totalPersentase += 77;
+        totalPersentase += 67;
       } else if (selectedButtons.length === 1) {
         kerusakan.push({ diagnosis: 'Kerusakan belum bisa dipastikan', percentage: 33 });
         totalPersentase += 0;
@@ -122,10 +122,10 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(2) && selectedButtons.includes(9))
       ) {
         kerusakan.push({
-          diagnosis: 'Kerusakan Mungkin Karena Pompa rusak / Air pada pemasok air habis',
-          percentage: 77,
+          diagnosis: 'Pompa rusak / Air pada pemasok air habis',
+          percentage: 67,
         });
-        totalPersentase += 77;
+        totalPersentase += 67;
       } else if (selectedButtons.length === 1) {
         kerusakan.push({ diagnosis: 'Kerusakan belum bisa dipastikan', percentage: 33 });
         totalPersentase += 0;
@@ -144,10 +144,10 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(2) && selectedButtons.includes(12))
       ) {
         kerusakan.push({
-          diagnosis: 'Kerusakan Mungkin Karena Saluran air tersumbat',
-          percentage: 77,
+          diagnosis: 'Saluran air tersumbat',
+          percentage: 67,
         });
-        totalPersentase += 77;
+        totalPersentase += 67;
       } else if (selectedButtons.length === 1) {
         kerusakan.push({ diagnosis: 'Kerusakan belum bisa dipastikan', percentage: 33 });
         totalPersentase += 0;
@@ -166,10 +166,10 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(8) && selectedButtons.includes(11))
       ) {
         kerusakan.push({
-          diagnosis: 'Kerusakan Mungkin Karena Gilingan kopi yang masih kasar',
-          percentage: 77,
+          diagnosis: 'Gilingan kopi yang masih kasar',
+          percentage: 67,
         });
-        totalPersentase += 77;
+        totalPersentase += 67;
       } else if (selectedButtons.length === 1) {
         kerusakan.push({ diagnosis: 'Kerusakan belum bisa dipastikan', percentage: 33 });
         totalPersentase += 0;
@@ -187,8 +187,8 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(4) && selectedButtons.includes(10)) ||
         (selectedButtons.includes(5) && selectedButtons.includes(10))
       ) {
-        kerusakan.push({ diagnosis: 'Kerusakan Mungkin Karena Filter sudah tua', percentage: 77 });
-        totalPersentase += 77;
+        kerusakan.push({ diagnosis: 'Filter sudah tua', percentage: 67 });
+        totalPersentase += 67;
       } else if (selectedButtons.length === 1) {
         kerusakan.push({ diagnosis: 'Kerusakan belum bisa dipastikan', percentage: 33 });
         totalPersentase += 0;
@@ -206,8 +206,8 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
         (selectedButtons.includes(4) && selectedButtons.includes(11)) ||
         (selectedButtons.includes(6) && selectedButtons.includes(11))
       ) {
-        kerusakan.push({ diagnosis: 'Kerusakan Mungkin Karena Filter sudah tua', percentage: 77 });
-        totalPersentase += 77;
+        kerusakan.push({ diagnosis: 'Filter sudah tua', percentage: 67 });
+        totalPersentase += 67;
       } else if (selectedButtons.length === 1) {
         kerusakan.push({ diagnosis: 'Kerusakan belum bisa dipastikan', percentage: 33 });
         totalPersentase += 0;
@@ -240,7 +240,7 @@ const ModalKendala = ({ modalKendalaVisible, setModalKendala, handleKerusakan })
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           <View>
-            <Text style={styles.text}>Kendala yang dialami</Text>
+            <Text style={styles.text}>Pilih Kendala yang dialami</Text>
           </View>
           <View style={{ gap: 8, height: 400, paddingVertical: 20 }}>
             <ScrollView>
@@ -342,7 +342,9 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: 'Poppins_SemiBold',
-    fontSize: 14,
+    fontSize: 20,
+    color: '#2D5BD1',
+    textAlign: 'center',
   },
   kerusakanContainer: {
     marginTop: 20,

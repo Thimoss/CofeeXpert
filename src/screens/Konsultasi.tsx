@@ -41,7 +41,7 @@ const Konsultasi = (props: any) => {
               <Text style={styles.title}>Mesin Kopi Kamu Mengalami Kendala?</Text>
               <Text style={styles.text}>
                 Silahkan beri tahu kami ciri-ciri yang mesin kopi kamu alami. Kami akan berusaha
-                membantu
+                membantu.
               </Text>
             </View>
 
@@ -65,7 +65,6 @@ const Konsultasi = (props: any) => {
                 kamu alami adalah:
               </Text>
               <View style={styles.text}>
-                <Text style={styles.text}>Jenis Kerusakan:</Text>
                 {jenisKerusakan && jenisKerusakan.length > 0 ? (
                   <>
                     {isKerusakanBelumDipastikan ? (
@@ -95,9 +94,22 @@ const Konsultasi = (props: any) => {
                   </>
                 ) : (
                   <View>
-                    <Text style={styles.text}>1. Kerusakan belum bisa dipastikan</Text>
-                    <Text style={styles.text}>Persentase Kerusakan: 33%</Text>
+                    <Text style={styles.text}>Kerusakan belum bisa dipastikan</Text>
                   </View>
+                )}
+                {jenisKerusakan && jenisKerusakan.length === 1 ? (
+                  <Text style={styles.subTitleText}>
+                    Silahkan pindah ke bagian Kerusakan untuk melihat solusi untuk mengatasi masalah
+                    diatas.
+                  </Text>
+                ) : (
+                  jenisKerusakan &&
+                  jenisKerusakan.length > 1 && (
+                    <Text style={styles.subTitleText}>
+                      Silahkan pindah ke bagian Kerusakan untuk melihat solusi untuk mengatasi
+                      masalah-masalah diatas.
+                    </Text>
+                  )
                 )}
               </View>
             </View>
@@ -117,6 +129,9 @@ const Konsultasi = (props: any) => {
 export default Konsultasi;
 
 const styles = StyleSheet.create({
+  subTitleText: {
+    fontFamily: 'Poppins_SemiBold',
+  },
   viewRow: {
     flexDirection: 'row',
     alignItems: 'center',
